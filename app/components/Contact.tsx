@@ -16,14 +16,14 @@ const socialLinks = [
   },
   {
     icon: Linkedin,
-    href: "https://linkedin.com/in/hieu",
+    href: "https://www.linkedin.com/in/qhie/",
     label: "LinkedIn",
   },
 ];
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 px-6">
+    <section id="contact" className="relative py-14 px-6">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-150 h-100 bg-purple-700/6 rounded-full blur-[120px]" />
@@ -71,8 +71,9 @@ export default function Contact() {
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ y: -3 }}
-                className="w-10 h-10 rounded-full border border-purple-500/20 bg-purple-500/5 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-400/40 hover:bg-purple-500/10 transition-all duration-300"
+                whileHover={{ rotate: 360, scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                className="w-10 h-10 rounded-full border border-purple-500/20 bg-purple-500/5 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-400/40 hover:bg-purple-500/10 transition-colors duration-300"
                 aria-label={social.label}
               >
                 <social.icon size={18} />

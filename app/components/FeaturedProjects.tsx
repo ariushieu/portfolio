@@ -155,7 +155,7 @@ function BrowserMockup({
 
 export default function FeaturedProjects() {
   return (
-    <section id="projects" className="relative py-24 px-6">
+    <section id="projects" className="relative py-14 px-6">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 right-1/3 w-125 h-125 bg-purple-700/5 rounded-full blur-[130px]" />

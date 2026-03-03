@@ -195,7 +195,7 @@ export default function TechStack() {
   }, []);
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section className="relative py-14 px-6 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-175 h-175 bg-purple-600/6 rounded-full blur-[160px]" />

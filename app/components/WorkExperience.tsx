@@ -11,6 +11,7 @@ const experiences = [
     period: "Graduated",
     iconUrl: "/logo_aptech.png",
     color: "from-purple-500/20 to-indigo-500/20",
+    link: "https://aptech.fpt.edu.vn/",
   },
   {
     company: "Hanoi University of Natural Resources",
@@ -20,6 +21,7 @@ const experiences = [
     period: "3rd Year",
     iconUrl: "/logo_hunre.jpg",
     color: "from-pink-500/20 to-purple-500/20",
+    link: "https://hunre.edu.vn/",
   }
   // {
   //   company: "TopPhimDinh.site",
@@ -61,7 +63,7 @@ const item = {
 
 export default function WorkExperience() {
   return (
-    <section id="about" className="relative py-24 px-6">
+    <section id="about" className="relative py-14 px-6">
       {/* Background blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/3 w-125 h-125 bg-purple-700/6 rounded-full blur-[120px]" />
@@ -134,9 +136,14 @@ export default function WorkExperience() {
                     {exp.description}
                   </p>
 
-                  <button className="px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 rounded text-purple-300 hover:bg-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+                  <a
+                    href={exp.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-1.5 text-[10px] font-semibold uppercase tracking-wider bg-purple-500/10 border border-purple-500/25 rounded text-purple-300 hover:bg-purple-500/20 hover:border-purple-400/40 transition-all duration-300 inline-block"
+                  >
                     Learn More
-                  </button>
+                  </a>
                 </div>
               </div>
             </motion.div>

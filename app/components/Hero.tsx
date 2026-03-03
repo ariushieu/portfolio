@@ -78,7 +78,7 @@ export default function Hero() {
           {/* Avatar with glowing orb */}
           <div className="relative shrink-0">
             <div className="absolute inset-0 -m-4 rounded-full bg-purple-500/20 blur-xl animate-pulse-ring" />
-            <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1a0a2e] border border-purple-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)]">
+            <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-[#1a0a2e] border border-purple-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)]">
               <img src="/avatar.jpg" alt="Hieu Quoc Nguyen" className="w-full h-full object-cover" />
             </div>
           </div>
