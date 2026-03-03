@@ -14,7 +14,7 @@ const experiences = [
     color: "from-purple-500/20 to-indigo-500/20",
   },
   {
-    company: "Hanoi Univ. of Natural Resources",
+    company: "Hanoi University of Natural Resources",
     role: "Third Year Student",
     description:
       "Currently pursuing a degree focused on information technology, software architecture, and enterprise application development.",
@@ -22,27 +22,27 @@ const experiences = [
     iconUrl:
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
     color: "from-pink-500/20 to-purple-500/20",
-  },
-  {
-    company: "TopPhimDinh.site",
-    role: "Full-Stack Developer",
-    description:
-      "Built a full movie streaming website with Spring Boot backend, responsive UI, user authentication, and content management system.",
-    period: "2024",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-    color: "from-blue-500/20 to-purple-500/20",
-  },
-  {
-    company: "iSocials.site",
-    role: "Full-Stack Developer",
-    description:
-      "Developed an IELTS learning platform with interactive exercises, progress tracking, and a Spring Boot powered REST API backend.",
-    period: "2024",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    color: "from-emerald-500/20 to-purple-500/20",
-  },
+  }
+  // {
+  //   company: "TopPhimDinh.site",
+  //   role: "Full-Stack Developer",
+  //   description:
+  //     "Built a full movie streaming website with Spring Boot backend, responsive UI, user authentication, and content management system.",
+  //   period: "2024",
+  //   iconUrl:
+  //     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
+  //   color: "from-blue-500/20 to-purple-500/20",
+  // },
+  // {
+  //   company: "iSocials.site",
+  //   role: "Full-Stack Developer",
+  //   description:
+  //     "Developed an IELTS learning platform with interactive exercises, progress tracking, and a Spring Boot powered REST API backend.",
+  //   period: "2024",
+  //   iconUrl:
+  //     "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+  //   color: "from-emerald-500/20 to-purple-500/20",
+  // },
 ];
 
 const container = {
@@ -80,7 +80,7 @@ export default function WorkExperience() {
           className="mb-14"
         >
           <h2 className="text-3xl sm:text-4xl font-bold neon-text">
-            Work Experience
+            Education
           </h2>
           <div className="w-16 h-1 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mt-4" />
         </motion.div>

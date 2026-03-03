@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const roles = [
   "BE Developer.",
   "Spring Boot Engineer.",
-  "Problem Solver.",
+  // "Problem Solver.",
   "Full-Stack Learner.",
 ];
 
@@ -73,13 +73,13 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="flex items-start gap-6 mb-6"
+          className="flex items-center gap-6 mb-6"
         >
           {/* Avatar with glowing orb */}
           <div className="relative shrink-0">
             <div className="absolute inset-0 -m-4 rounded-full bg-purple-500/20 blur-xl animate-pulse-ring" />
             <div className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#1a0a2e] border border-purple-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-              <span className="text-5xl">👨‍💻</span>
+              <img src="/avatar.jpg" alt="Hieu Quoc Nguyen" className="w-full h-full object-cover" />
             </div>
           </div>
 

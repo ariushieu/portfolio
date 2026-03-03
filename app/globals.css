@@ -34,8 +34,15 @@ body {
 
 /* Typewriter cursor blink */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
 }
 
 .typewriter-cursor::after {
@@ -49,13 +56,16 @@ body {
 ::-webkit-scrollbar {
   width: 6px;
 }
+
 ::-webkit-scrollbar-track {
   background: #050208;
 }
+
 ::-webkit-scrollbar-thumb {
   background: rgba(139, 92, 246, 0.4);
   border-radius: 3px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(139, 92, 246, 0.6);
 }
@@ -92,13 +102,27 @@ body {
 
 /* Animated floating */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
 }
 
 @keyframes float-slow {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(2deg); }
+
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
 }
 
 .animate-float {
@@ -124,9 +148,20 @@ body {
 
 /* Pulse ring */
 @keyframes pulse-ring {
-  0% { transform: scale(0.8); opacity: 0.6; }
-  50% { transform: scale(1.1); opacity: 0.2; }
-  100% { transform: scale(0.8); opacity: 0.6; }
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.2;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
 }
 
 .animate-pulse-ring {
