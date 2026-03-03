@@ -1,157 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
 
 const projects = [
   {
     label: "Featured Project",
     title: "TopPhimDinh",
     description:
-      "A full-featured movie streaming website built with Spring Boot. Browse, search, and watch movies with a responsive UI, user authentication, content management, and a powerful admin panel for managing the movie database.",
-    tags: ["Spring Boot", "Thymeleaf", "MySQL", "REST API"],
+      "A movie streaming website built with React and TypeScript. The frontend calls directly to third-party movie APIs to fetch and display content — no backend needed. Features include browsing, searching, and watching movies with a fully responsive UI.",
+    tags: ["React", "TypeScript", "REST API"],
     github: "https://github.com/ariushieu/",
     live: "https://topphimdinh.site/",
     techIcons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
     ],
-    // Browser mockup content
-    mockup: {
-      title: "This headline reflects my personality (blog)",
-      subtitle: "WHO AM I?",
-      body: "I'm a passionate developer who loves building things that live on the internet. I develop exceptional websites and web apps that provide intuitive, pixel-perfect user interfaces.",
-      footerText: "Want to headhunt10 in (day)?",
-    },
+    previewImage: "/preview/topphimdinh.PNG",
   },
   {
     label: "Featured Project",
     title: "iSocials — IELTS Learning",
     description:
-      "An interactive IELTS learning platform featuring practice exercises for all four skills, progress tracking, leaderboards, and a Spring Boot powered REST API backend. Designed to help students improve their English proficiency.",
-    tags: ["Spring Boot", "React", "PostgreSQL", "Docker"],
+      "An interactive IELTS learning platform built with React and TypeScript. Features practice exercises for all four skills, progress tracking, and leaderboards. Powered by a Node.js backend with MongoDB Cloud for data storage.",
+    tags: ["React", "TypeScript", "Node.js", "MongoDB"],
     github: "https://github.com/ariushieu/",
     live: "https://www.isocials.site/",
     techIcons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     ],
-    mockup: {
-      title: "Interactive IELTS Platform",
-      subtitle: "omnitonicity (Alex)",
-      body: "Practice all four IELTS skills — Listening, Reading, Writing, and Speaking — with instant feedback and progress analytics to track your improvement journey.",
-      footerText: "Start learning today",
-    },
+    previewImage: "/preview/isocials.PNG",
   },
 ];
-
-/* Browser mockup component matching the image's wireframe style */
-function BrowserMockup({
-  mockup,
-  live,
-}: {
-  mockup: (typeof projects)[0]["mockup"];
-  live: string;
-}) {
-  return (
-    <motion.a
-      href={live}
-      target="_blank"
-      rel="noopener noreferrer"
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.3 }}
-      className="block group"
-    >
-      <div className="relative rounded-xl overflow-hidden border border-purple-500/25 bg-[#0c0818] shadow-2xl shadow-purple-900/30">
-        {/* Browser chrome bar */}
-        <div className="flex items-center gap-2 px-4 py-3 bg-[#110a20] border-b border-purple-500/15">
-          <div className="flex gap-1.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-red-500/40" />
-            <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40" />
-            <div className="w-2.5 h-2.5 rounded-full bg-green-500/40" />
-          </div>
-          <div className="flex-1 ml-3">
-            <div className="w-40 h-4 rounded bg-purple-500/8 mx-auto" />
-          </div>
-        </div>
-
-        {/* Browser content — wireframe style matching image */}
-        <div className="p-6 sm:p-8 relative min-h-60">
-          {/* Grid background */}
-          <div className="absolute inset-0 opacity-[0.08]">
-            <div
-              className="w-full h-full"
-              style={{
-                backgroundImage: `
-                  linear-gradient(rgba(139,92,246,0.4) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(139,92,246,0.4) 1px, transparent 1px)
-                `,
-                backgroundSize: "28px 28px",
-              }}
-            />
-          </div>
-
-          <div className="relative z-10 space-y-4">
-            {/* Mock header */}
-            <div className="flex items-start gap-4">
-              {/* Placeholder image area */}
-              <div className="w-16 h-16 rounded-lg bg-purple-500/10 border border-purple-500/15 flex items-center justify-center shrink-0">
-                <svg
-                  className="w-6 h-6 text-purple-500/40"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div className="flex-1 space-y-2">
-                <h4 className="text-sm font-medium text-gray-300 leading-tight">
-                  {mockup.title}
-                </h4>
-                <div className="w-3/4 h-2 rounded bg-purple-500/10" />
-              </div>
-            </div>
-
-            {/* Subtitle */}
-            <div className="pt-2">
-              <p className="text-xs font-semibold text-purple-400/70 uppercase tracking-wider">
-                {mockup.subtitle}
-              </p>
-            </div>
-
-            {/* Body text lines */}
-            <div className="space-y-2">
-              <p className="text-[11px] text-gray-500 leading-relaxed">
-                {mockup.body}
-              </p>
-            </div>
-
-            {/* Wireframe bars */}
-            <div className="space-y-1.5 pt-2">
-              <div className="w-full h-1.5 rounded bg-purple-500/6" />
-              <div className="w-4/5 h-1.5 rounded bg-purple-500/6" />
-              <div className="w-3/5 h-1.5 rounded bg-purple-500/6" />
-            </div>
-
-            {/* Footer text */}
-            <p className="text-[10px] text-gray-600 pt-1">
-              {mockup.footerText}
-            </p>
-          </div>
-
-          {/* Hover overlay */}
-          <div className="absolute inset-0 bg-linear-to-t from-purple-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        </div>
-      </div>
-    </motion.a>
-  );
-}
 
 export default function FeaturedProjects() {
   return (
@@ -163,7 +43,7 @@ export default function FeaturedProjects() {
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <div className="flex flex-col gap-36">
+        <div className="flex flex-col gap-28">
           {projects.map((project, i) => {
             const isEven = i % 2 === 0;
 
@@ -174,67 +54,97 @@ export default function FeaturedProjects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.6, ease: "easeOut" as const }}
-                className={`relative flex flex-col ${
-                  isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                } items-start gap-8 lg:gap-12`}
+                className="relative"
               >
-                {/* Text side */}
-                <div
-                  className={`flex-1 ${
-                    isEven ? "lg:text-left" : "lg:text-right"
-                  } pt-4`}
-                >
-                  <p className="text-purple-400 text-xs font-medium tracking-wider uppercase mb-2">
-                    {project.label}
-                  </p>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-                    {project.title}
-                  </h3>
-
-                  {/* Description glass card */}
-                  <div className="relative p-5 mb-5 rounded-2xl overflow-hidden">
-                    {/* Gradient border */}
-                    <div
-                      className="absolute -inset-px rounded-2xl bg-linear-to-br from-purple-500/40 via-purple-600/10 to-indigo-500/30"
-                      style={{ zIndex: 0 }}
-                    />
-                    <div
-                      className="absolute inset-0 rounded-2xl bg-[#0d0620]/95 backdrop-blur-xl"
-                      style={{ zIndex: 1 }}
-                    />
-                    <div
-                      className="absolute inset-0 bg-linear-to-br from-purple-500/6 via-transparent to-purple-600/4 pointer-events-none"
-                      style={{ zIndex: 2 }}
-                    />
-                    <p
-                      className="relative text-gray-400 text-sm leading-relaxed"
-                      style={{ zIndex: 3 }}
-                    >
-                      {project.description}
-                    </p>
-                  </div>
-
-                  {/* Tech icons — matching image style (small circular icons) */}
+                {/* Grid layout — both columns overlap in the middle */}
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+                  {/* Preview image — spans 7 columns, positioned on one side */}
                   <div
-                    className={`flex gap-3 ${isEven ? "" : "lg:justify-end"}`}
+                    className={`lg:row-start-1 ${
+                      isEven
+                        ? "lg:col-start-6 lg:col-end-13"
+                        : "lg:col-start-1 lg:col-end-8"
+                    }`}
                   >
-                    {project.techIcons.map((src, idx) => (
-                      <a
-                        key={idx}
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-10 h-10 rounded-full bg-[#110a1f] ring-1 ring-purple-500/25 flex items-center justify-center hover:bg-purple-500/15 hover:ring-purple-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 shadow-[0_0_8px_rgba(139,92,246,0.08)]"
-                      >
-                        <img src={src} alt="tech" className="w-5 h-5" />
-                      </a>
-                    ))}
-                  </div>
-                </div>
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                      className="block group"
+                    >
+                      <div className="relative rounded-lg overflow-hidden border border-purple-500/15 shadow-2xl shadow-purple-900/20">
+                        {/* Browser chrome bar */}
+                        <div className="flex items-center gap-2 px-4 py-2 bg-[#110a20] border-b border-purple-500/15">
+                          <div className="flex gap-1.5">
+                            <div className="w-2 h-2 rounded-full bg-red-500/40" />
+                            <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
+                            <div className="w-2 h-2 rounded-full bg-green-500/40" />
+                          </div>
+                          <div className="flex-1 ml-3">
+                            <div className="w-32 h-3 rounded bg-purple-500/8 mx-auto" />
+                          </div>
+                        </div>
 
-                {/* Browser mockup side — matching the image exactly */}
-                <div className="flex-1 w-full">
-                  <BrowserMockup mockup={project.mockup} live={project.live} />
+                        {/* Screenshot or placeholder */}
+                        <div className="relative">
+                          <img
+                            src={
+                              project.previewImage || "/project_placeholder.png"
+                            }
+                            alt={project.title}
+                            className="w-full h-auto max-h-80 object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-linear-to-t from-[#0a0515]/60 to-transparent pointer-events-none" />
+                        </div>
+                      </div>
+                    </motion.a>
+                  </div>
+
+                  {/* Text side — spans 7 columns, overlaps the image */}
+                  <div
+                    className={`lg:row-start-1 relative z-10 mt-6 lg:mt-0 ${
+                      isEven
+                        ? "lg:col-start-1 lg:col-end-7 lg:text-left"
+                        : "lg:col-start-7 lg:col-end-13 lg:text-right"
+                    }`}
+                  >
+                    <p className="text-purple-400 text-xs font-medium tracking-wider uppercase mb-2">
+                      {project.label}
+                    </p>
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white mb-5">
+                      {project.title}
+                    </h3>
+
+                    {/* Description glass card — semi-transparent, sits ON TOP of the image */}
+                    <div className="relative p-5 mb-5 rounded-xl overflow-hidden shadow-xl">
+                      <div className="absolute inset-0 rounded-xl bg-[#0d0620]/70 backdrop-blur-md border border-purple-500/20" />
+                      <div className="absolute inset-0 bg-linear-to-br from-purple-500/8 via-transparent to-purple-600/5 pointer-events-none" />
+                      <p className="relative text-gray-400 text-sm leading-relaxed z-10">
+                        {project.description}
+                      </p>
+                    </div>
+
+                    {/* Tech icons */}
+                    <div
+                      className={`flex gap-3 ${
+                        isEven ? "" : "lg:justify-end"
+                      }`}
+                    >
+                      {project.techIcons.map((src, idx) => (
+                        <a
+                          key={idx}
+                          href={project.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-10 h-10 rounded-full bg-[#110a1f] ring-1 ring-purple-500/25 flex items-center justify-center hover:bg-purple-500/15 hover:ring-purple-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 shadow-[0_0_8px_rgba(139,92,246,0.08)]"
+                        >
+                          <img src={src} alt="tech" className="w-5 h-5" />
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             );

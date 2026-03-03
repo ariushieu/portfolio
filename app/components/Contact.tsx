@@ -42,9 +42,9 @@ export default function Contact() {
           <div className="w-16 h-1 bg-linear-to-r from-purple-500 to-pink-500 rounded-full mb-8" />
 
           <p className="text-gray-400 text-sm leading-relaxed mb-8 max-w-lg">
-            I&apos;m currently looking to join a cross-functional team that
-            values improving people&apos;s lives through accessible design, or
-            have a project in mind? Let&apos;s connect.
+            I&apos;m currently open to new opportunities — whether it&apos;s a
+            full-time position, freelance project, or just a chat about tech.
+            Let&apos;s connect.
           </p>
 
           {/* Email */}

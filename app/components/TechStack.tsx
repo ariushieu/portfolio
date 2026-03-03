@@ -210,22 +210,22 @@ export default function TechStack() {
           className="text-center mb-12"
         >
           <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-            I&apos;m currently looking to join a{" "}
+            I&apos;m a{" "}
             <span className="font-semibold text-white underline decoration-purple-400 decoration-2 underline-offset-4">
-              cross-functional
+              passionate developer
             </span>{" "}
-            <span className="font-bold text-white">team</span>
+            <span className="font-bold text-white">who loves building things that live on the internet</span>
           </p>
           <p className="text-gray-500 text-xs sm:text-sm mt-1">
-            that values improving people&apos;s lives through accessible design.
+            with clean code and beautiful UI.
           </p>
         </motion.div>
 
         {/* Icons + Orbital wrapped in single relative container */}
         <div ref={containerRef} className="relative">
-          {/* SVG overlay for connection lines */}
+          {/* SVG overlay for connection lines — hidden on mobile */}
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none z-0"
+            className="absolute inset-0 w-full h-full pointer-events-none z-0 hidden sm:block"
             style={{ overflow: "visible" }}
           >
             {lines.map((l, i) => (
@@ -247,10 +247,10 @@ export default function TechStack() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15 }}
-            className="relative z-30 flex flex-col items-center gap-5 mb-16"
+            className="relative z-30 flex flex-col items-center gap-3 sm:gap-5 mb-8 sm:mb-16"
           >
             {/* Top row */}
-            <div className="flex items-center gap-4 flex-wrap justify-center">
+            <div className="flex items-center gap-2.5 sm:gap-4 flex-wrap justify-center">
               {topRowIcons.map((t, i) => (
                 <div
                   key={t.name}
@@ -258,9 +258,9 @@ export default function TechStack() {
                   ref={(el) => { iconRefsTop.current[i] = el; }}
                 >
                   <div
-                    className={`w-11 h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
+                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
                   >
-                    <img src={t.icon} alt={t.name} className="w-6 h-6" />
+                    <img src={t.icon} alt={t.name} className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
                     {t.name}
@@ -269,7 +269,7 @@ export default function TechStack() {
               ))}
             </div>
             {/* Bottom row */}
-            <div className="flex items-center gap-4 flex-wrap justify-center">
+            <div className="flex items-center gap-2.5 sm:gap-4 flex-wrap justify-center">
               {bottomRowIcons.map((t, i) => (
                 <div
                   key={t.name}
@@ -277,9 +277,9 @@ export default function TechStack() {
                   ref={(el) => { iconRefsBottom.current[i] = el; }}
                 >
                   <div
-                    className={`w-11 h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
+                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
                   >
-                    <img src={t.icon} alt={t.name} className="w-6 h-6" />
+                    <img src={t.icon} alt={t.name} className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
                   <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
                     {t.name}
@@ -296,7 +296,7 @@ export default function TechStack() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.8, ease: "easeOut" as const }}
-            className="relative w-full max-w-3xl mx-auto"
+            className="relative w-full max-w-3xl mx-auto scale-[0.55] sm:scale-75 md:scale-100 origin-top"
             style={{ aspectRatio: "16/9" }}
           >
             {/* Purple glow behind center */}
@@ -345,7 +345,7 @@ export default function TechStack() {
             <div className="absolute top-[35%] left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
               <div className="relative">
                 <div className="absolute inset-0 -m-8 rounded-full bg-purple-500/25 blur-2xl animate-pulse-ring" />
-                <div className="w-24 h-24 rounded-full bg-linear-to-br from-purple-500/60 to-purple-800/60 border border-purple-400/30 flex items-center justify-center shadow-[0_0_80px_rgba(139,92,246,0.5)]">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-linear-to-br from-purple-500/60 to-purple-800/60 border border-purple-400/30 flex items-center justify-center shadow-[0_0_80px_rgba(139,92,246,0.5)]">
                   <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                     <path
                       d="M20 5C15 5 10 10 10 15C10 20 12 22 15 25C18 28 20 30 20 35C20 30 22 28 25 25C28 22 30 20 30 15C30 10 25 5 20 5Z"
