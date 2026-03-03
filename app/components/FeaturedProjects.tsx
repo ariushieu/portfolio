@@ -119,7 +119,7 @@ export default function FeaturedProjects() {
 
                     {/* Description glass card — semi-transparent, sits ON TOP of the image */}
                     <div className="relative p-5 mb-5 rounded-xl overflow-hidden shadow-xl">
-                      <div className="absolute inset-0 rounded-xl bg-[#0d0620]/70 backdrop-blur-md border border-purple-500/20" />
+                      <div className="absolute inset-0 rounded-xl bg-[#0d0620]/20 backdrop-blur-md border border-purple-500/20" />
                       <div className="absolute inset-0 bg-linear-to-br from-purple-500/8 via-transparent to-purple-600/5 pointer-events-none" />
                       <p className="relative text-gray-400 text-sm leading-relaxed z-10">
                         {project.description}
