@@ -9,8 +9,7 @@ const experiences = [
     description:
       "Completed an international software engineering program focused on Java, Spring Boot, databases, and full-stack development practices.",
     period: "Graduated",
-    iconUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/FPT_logo_2010.svg/200px-FPT_logo_2010.svg.png",
+    iconUrl: "/logo_aptech.png",
     color: "from-purple-500/20 to-indigo-500/20",
   },
   {
@@ -19,8 +18,7 @@ const experiences = [
     description:
       "Currently pursuing a degree focused on information technology, software architecture, and enterprise application development.",
     period: "3rd Year",
-    iconUrl:
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+    iconUrl: "/logo_hunre.jpg",
     color: "from-pink-500/20 to-purple-500/20",
   }
   // {
@@ -113,12 +111,12 @@ export default function WorkExperience() {
                   <div className="flex items-start gap-4 mb-3">
                     {/* Icon */}
                     <div
-                      className={`w-12 h-12 rounded-xl bg-linear-to-br ${exp.color} flex items-center justify-center border border-purple-500/20 shrink-0 p-2`}
+                      className={`w-12 h-12 rounded-full bg-linear-to-br ${exp.color} flex items-center justify-center border border-purple-500/20 shrink-0 overflow-hidden`}
                     >
                       <img
                         src={exp.iconUrl}
                         alt={exp.company}
-                        className="w-7 h-7 object-contain"
+                        className="w-full h-full object-cover"
                       />
                     </div>
 

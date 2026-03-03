@@ -9,7 +9,7 @@ const preahvihear = Preahvihear({
 });
 
 export const metadata: Metadata = {
-  title: "Hieu Quoc Nguyen — BE Developer (Spring Boot)",
+  title: "Hieu Quoc Nguyen",
   description:
     "Personal portfolio of Hieu Quoc Nguyen — Backend Developer specializing in Spring Boot, building robust and scalable applications.",
 };

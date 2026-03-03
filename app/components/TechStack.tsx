@@ -76,68 +76,34 @@ const bottomRowIcons = [
   },
 ];
 
-/* Icons scattered on the orbital rings */
+/* Icons on the orbital rings */
 const orbitIcons = [
-  {
-    name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-    angle: 20,
-    orbit: 1,
-  },
-  {
-    name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-    angle: 160,
-    orbit: 1,
-  },
-  {
-    name: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
-    angle: 290,
-    orbit: 1,
-  },
-  {
-    name: "Spring",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg",
-    angle: 70,
-    orbit: 2,
-  },
-  {
-    name: "MySQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    angle: 200,
-    orbit: 2,
-  },
-  {
-    name: "Redis",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg",
-    angle: 330,
-    orbit: 2,
-  },
-  {
-    name: "PostgreSQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    angle: 120,
-    orbit: 3,
-  },
-  {
-    name: "Java",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-    angle: 250,
-    orbit: 3,
-  },
+  { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", startAngle: 20, orbit: 1 },
+  { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", startAngle: 160, orbit: 1 },
+  { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", startAngle: 290, orbit: 1 },
+  { name: "Spring", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg", startAngle: 70, orbit: 2 },
+  { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", startAngle: 200, orbit: 2 },
+  { name: "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg", startAngle: 330, orbit: 2 },
+  { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", startAngle: 120, orbit: 3 },
+  { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", startAngle: 250, orbit: 3 },
 ];
 
-/* Orbit configs: rx, ry, rotation for each elliptical ring */
+/* Orbit configs: rx, ry, tilt angle, speed (deg/s), direction */
 const orbits = [
-  { rx: 220, ry: 55, rotate: -8 },
-  { rx: 280, ry: 70, rotate: 5 },
-  { rx: 340, ry: 85, rotate: -3 },
+  { rx: 220, ry: 55, rotate: -8, speed: 9, dir: 1 },    // 40s full rotation
+  { rx: 280, ry: 70, rotate: 5, speed: 7.2, dir: -1 },   // 50s, reverse
+  { rx: 340, ry: 85, rotate: -3, speed: 6, dir: 1 },     // 60s full rotation
 ];
 
-function orbitPos(angle: number, rx: number, ry: number) {
+function ellipsePos(angle: number, rx: number, ry: number, tiltDeg: number) {
   const rad = (angle * Math.PI) / 180;
-  return { x: Math.cos(rad) * rx, y: Math.sin(rad) * ry };
+  const x0 = Math.cos(rad) * rx;
+  const y0 = Math.sin(rad) * ry;
+  // Apply tilt rotation
+  const tiltRad = (tiltDeg * Math.PI) / 180;
+  const x = x0 * Math.cos(tiltRad) - y0 * Math.sin(tiltRad);
+  const y = x0 * Math.sin(tiltRad) + y0 * Math.cos(tiltRad);
+  return { x, y };
 }
 
 export default function TechStack() {
@@ -145,6 +111,7 @@ export default function TechStack() {
   const iconRefsTop = useRef<(HTMLDivElement | null)[]>([]);
   const iconRefsBottom = useRef<(HTMLDivElement | null)[]>([]);
   const orbContainerRef = useRef<HTMLDivElement>(null);
+  const orbitIconRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [lines, setLines] = useState<
     { x1: number; y1: number; x2: number; y2: number }[]
   >([]);
@@ -155,14 +122,12 @@ export default function TechStack() {
     if (!container || !orbContainer) return;
 
     const containerRect = container.getBoundingClientRect();
-    // Center orb is at 35% top, 50% left of orbContainer
-    const orbRect = orbContainerRef.current!.getBoundingClientRect();
+    const orbRect = orbContainer.getBoundingClientRect();
     const centerX = orbRect.left + orbRect.width / 2 - containerRect.left;
     const centerY = orbRect.top + orbRect.height * 0.35 - containerRect.top;
 
     const newLines: { x1: number; y1: number; x2: number; y2: number }[] = [];
 
-    // Lines from each top row icon to center
     iconRefsTop.current.forEach((el) => {
       if (!el) return;
       const r = el.getBoundingClientRect();
@@ -171,7 +136,6 @@ export default function TechStack() {
       newLines.push({ x1: iconCx, y1: iconCy, x2: centerX, y2: centerY });
     });
 
-    // Lines from each bottom row icon to center
     iconRefsBottom.current.forEach((el) => {
       if (!el) return;
       const r = el.getBoundingClientRect();
@@ -184,7 +148,6 @@ export default function TechStack() {
   }, []);
 
   useEffect(() => {
-    // Calculate on mount + resize
     const timer = setTimeout(calcLines, 300);
     window.addEventListener("resize", calcLines);
     return () => {
@@ -192,6 +155,44 @@ export default function TechStack() {
       window.removeEventListener("resize", calcLines);
     };
   }, [calcLines]);
+
+  // Animate orbit icons along elliptical paths
+  useEffect(() => {
+    let raf: number;
+    let lastTime = performance.now();
+
+    // Track current angle for each orbit icon
+    const angles = orbitIcons.map((ic) => ic.startAngle);
+
+    const animate = (now: number) => {
+      const dt = (now - lastTime) / 1000; // seconds elapsed
+      lastTime = now;
+
+      orbitIcons.forEach((ic, i) => {
+        const orb = orbits[ic.orbit - 1];
+        // Increment angle based on orbit speed and direction
+        angles[i] = (angles[i] + orb.speed * orb.dir * dt) % 360;
+
+        const pos = ellipsePos(angles[i], orb.rx, orb.ry, orb.rotate);
+
+        // Convert SVG coords to percentage
+        // viewBox: -400 -250 800 500, center offset -10 on Y
+        const pctX = ((pos.x + 400) / 800) * 100;
+        const pctY = ((pos.y - 10 + 250) / 500) * 100;
+
+        const el = orbitIconRefs.current[i];
+        if (el) {
+          el.style.left = `${pctX}%`;
+          el.style.top = `${pctY}%`;
+        }
+      });
+
+      raf = requestAnimationFrame(animate);
+    };
+
+    raf = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">
@@ -220,9 +221,9 @@ export default function TechStack() {
           </p>
         </motion.div>
 
-        {/* Icons + Orbital wrapped in single relative container for SVG lines */}
+        {/* Icons + Orbital wrapped in single relative container */}
         <div ref={containerRef} className="relative">
-          {/* SVG overlay for connection lines (full container coverage) */}
+          {/* SVG overlay for connection lines */}
           <svg
             className="absolute inset-0 w-full h-full pointer-events-none z-0"
             style={{ overflow: "visible" }}
@@ -240,7 +241,7 @@ export default function TechStack() {
             ))}
           </svg>
 
-          {/* Two rows of circular tech icons — z-30 so tooltips appear above */}
+          {/* Two rows of circular tech icons */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -254,9 +255,7 @@ export default function TechStack() {
                 <div
                   key={t.name}
                   className="group relative"
-                  ref={(el) => {
-                    iconRefsTop.current[i] = el;
-                  }}
+                  ref={(el) => { iconRefsTop.current[i] = el; }}
                 >
                   <div
                     className={`w-11 h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
@@ -275,9 +274,7 @@ export default function TechStack() {
                 <div
                   key={t.name}
                   className="group relative"
-                  ref={(el) => {
-                    iconRefsBottom.current[i] = el;
-                  }}
+                  ref={(el) => { iconRefsBottom.current[i] = el; }}
                 >
                   <div
                     className={`w-11 h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
@@ -306,7 +303,7 @@ export default function TechStack() {
             <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-purple-600/20 rounded-full blur-[100px]" />
             <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 bg-purple-500/30 rounded-full blur-[60px]" />
 
-            {/* SVG — orbital ellipses */}
+            {/* SVG — static orbital ellipses */}
             <svg
               className="absolute inset-0 w-full h-full"
               viewBox="-400 -250 800 500"
@@ -322,7 +319,7 @@ export default function TechStack() {
               {/* Ambient glow */}
               <circle cx="0" cy="-20" r="180" fill="url(#orbGlow)" />
 
-              {/* Orbital elliptical rings */}
+              {/* Orbital elliptical rings (static visual guides) */}
               {orbits.map((orb, i) => (
                 <ellipse
                   key={`orbit-${i}`}
@@ -337,7 +334,7 @@ export default function TechStack() {
                 />
               ))}
 
-              {/* Small decorative dots along orbits */}
+              {/* Small decorative dots */}
               <circle cx="-200" cy="30" r="2" fill="rgba(139,92,246,0.3)" />
               <circle cx="190" cy="-50" r="1.5" fill="rgba(139,92,246,0.2)" />
               <circle cx="80" cy="75" r="1.5" fill="rgba(139,92,246,0.25)" />
@@ -373,35 +370,24 @@ export default function TechStack() {
               </div>
             </div>
 
-            {/* Tech icons positioned on the orbital rings — GRAYSCALE */}
-            {orbitIcons.map((icon) => {
+            {/* Orbit icons — animated along elliptical paths */}
+            {orbitIcons.map((icon, i) => {
+              // Initial position (will be updated by rAF)
               const orb = orbits[icon.orbit - 1];
-              const pos = orbitPos(icon.angle, orb.rx, orb.ry);
-              // Apply orbit rotation
-              const rotRad = (orb.rotate * Math.PI) / 180;
-              const rx = pos.x * Math.cos(rotRad) - pos.y * Math.sin(rotRad);
-              const ry =
-                pos.x * Math.sin(rotRad) + pos.y * Math.cos(rotRad);
-              // Convert SVG coords to percentage position
-              const pctX = ((rx + 400) / 800) * 100;
-              const pctY = ((ry - 10 + 250) / 500) * 100;
+              const initPos = ellipsePos(icon.startAngle, orb.rx, orb.ry, orb.rotate);
+              const initPctX = ((initPos.x + 400) / 800) * 100;
+              const initPctY = ((initPos.y - 10 + 250) / 500) * 100;
 
               return (
-                <motion.div
+                <div
                   key={icon.name}
+                  ref={(el) => { orbitIconRefs.current[i] = el; }}
                   className="absolute z-10"
                   style={{
-                    left: `${pctX}%`,
-                    top: `${pctY}%`,
+                    left: `${initPctX}%`,
+                    top: `${initPctY}%`,
                     transform: "translate(-50%, -50%)",
-                  }}
-                  animate={{
-                    y: [0, -4, 0],
-                  }}
-                  transition={{
-                    duration: 3 + icon.orbit * 0.5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
+                    transition: "none",
                   }}
                 >
                   <div className="group relative">
@@ -416,7 +402,7 @@ export default function TechStack() {
                       {icon.name}
                     </span>
                   </div>
-                </motion.div>
+                </div>
               );
             })}
           </motion.div>
