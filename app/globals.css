@@ -134,6 +134,23 @@ body {
   animation: float-slow 8s ease-in-out infinite;
 }
 
+/* Fade in and slide up — replacement for Framer Motion initial/animate */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease-out both;
+}
+
 /* Glowing line animation */
 @keyframes dash {
   to {
@@ -169,10 +186,22 @@ body {
   animation: pulse-ring 4s ease-in-out infinite;
 }
 
-/* Hand-drawn circle around "cover" */
+/* Hand-drawn circle around "cover" — infinite draw/undraw loop */
 @keyframes draw-circle {
-  to {
+  0% {
+    stroke-dashoffset: 300;
+  }
+
+  30% {
     stroke-dashoffset: 0;
+  }
+
+  70% {
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: -300;
   }
 }
 
