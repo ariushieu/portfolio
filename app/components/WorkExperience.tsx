@@ -103,7 +103,7 @@ export default function WorkExperience() {
               <div className="absolute -inset-px rounded-2xl bg-linear-to-br from-purple-500/50 via-purple-600/15 to-indigo-500/40 opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Card */}
-              <div className="relative rounded-2xl bg-[#0a0515]/95 backdrop-blur-xl p-6 overflow-hidden">
+              <div className="light-card relative rounded-2xl bg-[#0a0515]/95 backdrop-blur-xl p-6 overflow-hidden">
                 {/* Inner subtle gradient overlay */}
                 <div className="absolute inset-0 bg-linear-to-br from-purple-500/[0.04] via-transparent to-indigo-500/[0.04] pointer-events-none" />
                 {/* Hover glow */}

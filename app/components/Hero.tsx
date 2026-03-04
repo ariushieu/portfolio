@@ -59,7 +59,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-20 pb-16 overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 pb-16 overflow-hidden"
     >
       {/* Ambient background */}
       <div className="absolute inset-0 pointer-events-none">
@@ -78,20 +78,20 @@ export default function Hero() {
           {/* Avatar with glowing orb */}
           <div className="relative shrink-0">
             <div className="absolute inset-0 -m-4 rounded-full bg-purple-500/20 blur-xl animate-pulse-ring" />
-            <div className="relative w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-[#1a0a2e] border border-purple-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)]">
-              <img src="/avatar.jpg" alt="Hieu Quoc Nguyen" className="w-full h-full object-cover" />
+            <div className="light-avatar-bg relative w-32 h-32 sm:w-36 sm:h-36 rounded-full bg-[#1a0a2e] border border-purple-500/30 flex items-center justify-center overflow-hidden shadow-[0_0_40px_rgba(139,92,246,0.3)]">
+              <img src="/avatar.jpg" alt="Hieu Nguyen" className="w-full h-full object-cover" />
             </div>
           </div>
 
           {/* Right of avatar */}
           <div className="pt-1">
             <p className="text-sm text-gray-400 mb-1">
-              Hello! I Am{" "}
+              Hello! I'm{" "}
               <span className="text-purple-400 font-medium">
-                Hieu Quoc Nguyen
+                Hieu Nguyen
               </span>
             </p>
-            <p className="text-xs text-gray-500 mb-1">A Developer who</p>
+            <p className="text-xs text-gray-500 mb-1">A developer who</p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-white">
               Judges a book
               <br />

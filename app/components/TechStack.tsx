@@ -258,11 +258,11 @@ export default function TechStack() {
                   ref={(el) => { iconRefsTop.current[i] = el; }}
                 >
                   <div
-                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
+                    className={`light-icon-circle w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
                   >
                     <img src={t.icon} alt={t.name} className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
+                  <span className="light-tooltip absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
                     {t.name}
                   </span>
                 </div>
@@ -277,11 +277,11 @@ export default function TechStack() {
                   ref={(el) => { iconRefsBottom.current[i] = el; }}
                 >
                   <div
-                    className={`w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
+                    className={`light-icon-circle w-9 h-9 sm:w-11 sm:h-11 rounded-full flex items-center justify-center bg-[#110a1f] ring-1 ${t.ring} hover:ring-purple-400/50 transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] shadow-[0_0_10px_rgba(139,92,246,0.08)]`}
                   >
                     <img src={t.icon} alt={t.name} className="w-5 h-5 sm:w-6 sm:h-6" />
                   </div>
-                  <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
+                  <span className="light-tooltip absolute -bottom-7 left-1/2 -translate-x-1/2 text-[9px] text-gray-500 bg-[#0a0515]/90 px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-50 pointer-events-none">
                     {t.name}
                   </span>
                 </div>
@@ -391,7 +391,7 @@ export default function TechStack() {
                   }}
                 >
                   <div className="group relative">
-                    <div className="w-8 h-8 rounded-lg bg-[#0c0818]/90 border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300 cursor-pointer p-1.5">
+                    <div className="light-orbit-icon w-8 h-8 rounded-lg bg-[#0c0818]/90 border border-purple-500/20 flex items-center justify-center hover:border-purple-400/50 hover:shadow-[0_0_20px_rgba(139,92,246,0.2)] transition-all duration-300 cursor-pointer p-1.5">
                       <img
                         src={icon.icon}
                         alt={icon.name}

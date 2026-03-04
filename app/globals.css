@@ -175,3 +175,147 @@ body {
     stroke-dashoffset: 0;
   }
 }
+
+/* Floating dock icon button */
+.dock-icon-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #9ca3af;
+  transition: color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.dock-icon-btn:hover {
+  color: #e5e7eb;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ─── Light mode ─── */
+html.light body {
+  background: #f8f7fc;
+  color: #1a1a2e;
+}
+
+/* ── Text overrides ── */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4 {
+  color: #1a1a2e !important;
+}
+
+html.light p {
+  color: #444 !important;
+}
+
+html.light span {
+  color: inherit;
+}
+
+html.light .neon-text {
+  text-shadow: none;
+  color: #1a1a2e !important;
+}
+
+/* Keep purple accent text vibrant */
+html.light .text-purple-400,
+html.light .text-purple-300 {
+  color: #7c3aed !important;
+}
+
+/* ── Cards with dark backgrounds ── */
+html.light .light-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Glass card ── */
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+html.light .glass-card:hover {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(139, 92, 246, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.1);
+}
+
+/* ── Tech stack & project icon circles ── */
+html.light .light-icon-circle {
+  background: #fff !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Tech stack tooltip ── */
+html.light .light-tooltip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #333 !important;
+}
+
+/* ── Project browser chrome bar ── */
+html.light .light-chrome-bar {
+  background: #f0edf5 !important;
+}
+
+/* ── Project description glass overlay ── */
+html.light .light-glass-overlay {
+  background: rgba(255, 255, 255, 0.85) !important;
+}
+
+/* ── Hero avatar ring ── */
+html.light .light-avatar-bg {
+  background: #ede9f5 !important;
+}
+
+/* ── Floating dock ── */
+html.light .light-dock {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.light .dock-icon-btn {
+  color: #555;
+}
+
+html.light .dock-icon-btn:hover {
+  color: #1a1a2e;
+  background: rgba(139, 92, 246, 0.08);
+}
+
+/* ── Dock tooltip ── */
+html.light .light-dock-tooltip {
+  background: #fff !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #333 !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html.light .light-dock-tooltip-arrow {
+  border-top-color: #fff !important;
+}
+
+/* ── Orbit icon backgrounds ── */
+html.light .light-orbit-icon {
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* ── Scrollbar ── */
+html.light ::-webkit-scrollbar-track {
+  background: #f8f7fc;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.3);
+}
+
+html.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}

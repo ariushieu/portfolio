@@ -9,9 +9,9 @@ const preahvihear = Preahvihear({
 });
 
 export const metadata: Metadata = {
-  title: "Hieu Quoc Nguyen",
+  title: "Hieu Nguyen",
   description:
-    "Personal portfolio of Hieu Quoc Nguyen — Backend Developer specializing in Spring Boot, building robust and scalable applications.",
+    "Personal portfolio of Hieu Nguyen — Backend Developer specializing in Spring Boot, building robust and scalable applications.",
 };
 
 export default function RootLayout({

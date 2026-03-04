@@ -76,7 +76,7 @@ export default function FeaturedProjects() {
                     >
                       <div className="relative rounded-lg overflow-hidden border border-purple-500/15 shadow-2xl shadow-purple-900/20">
                         {/* Browser chrome bar */}
-                        <div className="flex items-center gap-2 px-4 py-2 bg-[#110a20] border-b border-purple-500/15">
+                        <div className="light-chrome-bar flex items-center gap-2 px-4 py-2 bg-[#110a20] border-b border-purple-500/15">
                           <div className="flex gap-1.5">
                             <div className="w-2 h-2 rounded-full bg-red-500/40" />
                             <div className="w-2 h-2 rounded-full bg-yellow-500/40" />
@@ -119,7 +119,7 @@ export default function FeaturedProjects() {
 
                     {/* Description glass card — semi-transparent, sits ON TOP of the image */}
                     <div className="relative p-5 mb-5 rounded-xl overflow-hidden shadow-xl">
-                      <div className="absolute inset-0 rounded-xl bg-[#0d0620]/20 backdrop-blur-md border border-purple-500/20" />
+                      <div className="light-glass-overlay absolute inset-0 rounded-xl bg-[#0d0620]/20 backdrop-blur-md border border-purple-500/20" />
                       <div className="absolute inset-0 bg-linear-to-br from-purple-500/8 via-transparent to-purple-600/5 pointer-events-none" />
                       <p className="relative text-gray-400 text-sm leading-relaxed z-10">
                         {project.description}
@@ -138,7 +138,7 @@ export default function FeaturedProjects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-10 h-10 rounded-full bg-[#110a1f] ring-1 ring-purple-500/25 flex items-center justify-center hover:bg-purple-500/15 hover:ring-purple-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 shadow-[0_0_8px_rgba(139,92,246,0.08)]"
+                          className="light-icon-circle w-10 h-10 rounded-full bg-[#110a1f] ring-1 ring-purple-500/25 flex items-center justify-center hover:bg-purple-500/15 hover:ring-purple-400/50 hover:shadow-[0_0_15px_rgba(139,92,246,0.2)] transition-all duration-300 shadow-[0_0_8px_rgba(139,92,246,0.08)]"
                         >
                           <img src={src} alt="tech" className="w-5 h-5" />
                         </a>

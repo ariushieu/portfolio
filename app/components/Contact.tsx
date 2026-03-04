@@ -1,29 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ArrowUpRight, Facebook } from "lucide-react";
-
-const socialLinks = [
-  {
-    icon: Facebook,
-    href: "https://web.facebook.com/nq.hie.05",
-    label: "Facebook",
-  },
-  {
-    icon: Github,
-    href: "https://github.com/ariushieu/",
-    label: "GitHub",
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/in/qhie/",
-    label: "LinkedIn",
-  },
-];
+import { Mail, ArrowUpRight } from "lucide-react";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-14 px-6">
+    <section id="contact" className="relative py-14 px-6 pb-28">
       {/* Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-150 h-100 bg-purple-700/6 rounded-full blur-[120px]" />
@@ -51,7 +33,7 @@ export default function Contact() {
           <motion.a
             href="mailto:hieunguyen2005q@gmail.com"
             whileHover={{ x: 4 }}
-            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm group mb-10"
+            className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors text-sm group"
           >
             <Mail size={18} />
             <span className="underline decoration-purple-500/40 underline-offset-4 group-hover:decoration-purple-400/80 transition-all">
@@ -62,24 +44,6 @@ export default function Contact() {
               className="opacity-0 group-hover:opacity-100 transition-opacity"
             />
           </motion.a>
-
-          {/* Social icons */}
-          <div className="flex items-center gap-4 mt-6">
-            {socialLinks.map((social) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ rotate: 360, scale: 1.2 }}
-                transition={{ type: "spring", stiffness: 200, damping: 10 }}
-                className="w-10 h-10 rounded-full border border-purple-500/20 bg-purple-500/5 flex items-center justify-center text-gray-400 hover:text-purple-400 hover:border-purple-400/40 hover:bg-purple-500/10 transition-colors duration-300"
-                aria-label={social.label}
-              >
-                <social.icon size={18} />
-              </motion.a>
-            ))}
-          </div>
         </motion.div>
       </div>
 
@@ -88,7 +52,7 @@ export default function Contact() {
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-600">
           <p>
             Designed & Built by{" "}
-            <span className="text-purple-400">Hieu Quoc Nguyen</span>
+            <span className="text-purple-400">Hieu Nguyen</span>
           </p>
           <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
