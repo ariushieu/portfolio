@@ -5,20 +5,6 @@ import { motion } from "framer-motion";
 const projects = [
   {
     label: "Featured Project",
-    title: "TopPhimDinh",
-    description:
-      "A movie streaming website built with React and TypeScript. The frontend calls directly to third-party movie APIs to fetch and display content — no backend needed. Features include browsing, searching, and watching movies with a fully responsive UI.",
-    tags: ["React", "TypeScript", "REST API"],
-    github: "https://github.com/ariushieu/",
-    live: "https://topphimdinh.site/",
-    techIcons: [
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-    ],
-    previewImage: "/preview/topphimdinh.PNG",
-  },
-  {
-    label: "Featured Project",
     title: "iSocials — IELTS Learning",
     description:
       "An interactive IELTS learning platform built with React and TypeScript. Features practice exercises for all four skills, progress tracking, and leaderboards. Powered by a Node.js backend with MongoDB Cloud for data storage.",
@@ -31,6 +17,20 @@ const projects = [
     ],
     previewImage: "/preview/isocials.PNG",
   },
+  {
+    label: "Featured Project",
+    title: "TopPhimDinh",
+    description:
+      "A movie streaming website built with React and TypeScript. The frontend calls directly to third-party movie APIs to fetch and display content — no backend needed. Features include browsing, searching, and watching movies with a fully responsive UI.",
+    tags: ["React", "TypeScript", "REST API"],
+    github: "https://github.com/ariushieu/",
+    live: "https://topphimdinh.site/",
+    techIcons: [
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+    ],
+    previewImage: "/preview/topphimdinh.PNG",
+  }
 ];
 
 export default function FeaturedProjects() {
