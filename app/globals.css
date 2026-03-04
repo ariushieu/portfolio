@@ -168,3 +168,10 @@ body {
 .animate-pulse-ring {
   animation: pulse-ring 4s ease-in-out infinite;
 }
+
+/* Hand-drawn circle around "cover" */
+@keyframes draw-circle {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

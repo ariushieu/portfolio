@@ -100,7 +100,34 @@ export default function Hero() {
                 <span className="bg-linear-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
                   cover
                 </span>
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-linear-to-r from-purple-400 to-pink-400 rounded-full" />
+                <svg
+                  className="absolute -inset-x-2 -inset-y-1 w-[calc(100%+16px)] h-[calc(100%+8px)] md:-inset-x-4 md:-inset-y-2.5 md:w-[calc(100%+32px)] md:h-[calc(100%+20px)] pointer-events-none"
+                  viewBox="0 0 120 50"
+                  fill="none"
+                  preserveAspectRatio="none"
+                >
+                  <ellipse
+                    cx="60"
+                    cy="25"
+                    rx="55"
+                    ry="20"
+                    stroke="url(#circleGrad)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeDasharray="300"
+                    strokeDashoffset="300"
+                    transform="rotate(-2 60 25)"
+                    style={{
+                      animation: "draw-circle 1.2s ease-out 0.8s forwards",
+                    }}
+                  />
+                  <defs>
+                    <linearGradient id="circleGrad" x1="0" y1="0" x2="120" y2="50">
+                      <stop offset="0%" stopColor="#c084fc" />
+                      <stop offset="100%" stopColor="#f472b6" />
+                    </linearGradient>
+                  </defs>
+                </svg>
               </span>
               ...
             </h1>
