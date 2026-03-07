@@ -1,0 +1,8 @@
+# Our security address
+Contact: mailto:hieunguyen2005q@gmail.com
+
+# Preferred languages
+Preferred-Languages: en, vi
+
+# Expires: Update this date to 1 year from now
+Expires: 2027-03-07T00:00:00.000Z
